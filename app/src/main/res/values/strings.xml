@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Igreja Formosa de Cristo APP</string>
+    <string name="hint_password">Digite sua senha...</string>
+    <string name="hint_cpf">Digite seu CPF...</string>
+    <string name="cpf">CPF</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+</resources>
