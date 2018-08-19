@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkLoginIsTrue() {
         var cpf = edtCpfCnpj.text.toString().replace(".","").replace("-", "");
-        if (cpf != "39144510845") {
+        if (cpf == "") {
             Toast.makeText(this, "CPF ou Senha inválidos.", Toast.LENGTH_LONG).show();
         }
         else {
