@@ -1,5 +1,7 @@
 package com.ifcapp.ifcapp.activitys
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.StaggeredGridLayoutManager
@@ -7,14 +9,17 @@ import com.ifcapp.ifcapp.R
 import com.ifcapp.ifcapp.adapters.AgendaListAdapter
 import com.ifcapp.ifcapp.models.Agenda
 import kotlinx.android.synthetic.main.activity_home.*
+import java.io.Serializable
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(), AgendaListAdapter.OnAgendaClick {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         val recyclerView = recyclerViewAgenda
-        recyclerView.adapter = AgendaListAdapter(agenda(), this)
+        recyclerView.adapter = AgendaListAdapter(this, agenda(), this)
 
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
@@ -26,12 +31,27 @@ class HomeActivity : AppCompatActivity() {
     private fun agenda(): List<Agenda> {
         return listOf(
                 Agenda("18/08/2018",
-                        "Acústico BBF"),
-                Agenda("19/09/2018",
-                        "Culto da família"),
-                Agenda("22/08/2018",
-                        "Campanha Respostas!"),
-                Agenda("24/08/2018",
-                        "Culto de Sexta, aquele que ninguém vai."))
+                        "Acústico BBF", "BBF"),
+                Agenda("20/10/2018",
+                        "Culto das crianças", "KIDS"),
+                Agenda("05/10/2018",
+                        "Palestra Emagrecimento e Alimentação", "EMAG"),
+                Agenda("20, 21 e 22 de setembro de 2018",
+                        "Seminario Imersão", "ESP"),
+                Agenda("29/09/2018",
+                        "Culto dos jovens", "JOV"),
+                Agenda("07/04/2018",
+                        "Aniversário de 15 anos - Coral Kemuel", "KEM"),
+                Agenda("15/09/2018",
+                        "Workshop Vocal", "WORK"))
+    }
+
+    override fun onAgendaClick(item: Agenda?) {
+        var selectedAgenda: Agenda
+        selectedAgenda = item!!
+
+        val intent = Intent(this, ItemAgendaActivity::class.java)
+        intent.putExtra("selectedAgenda", selectedAgenda)
+        startActivity(intent);
     }
 }

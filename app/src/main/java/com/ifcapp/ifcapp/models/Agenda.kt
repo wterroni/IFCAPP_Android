@@ -1,8 +1,8 @@
 package com.ifcapp.ifcapp.models
 
-class Agenda(val title: String,
-             val description: String) {
+import java.io.Serializable
 
-
+class Agenda(var title: String,
+             var description: String, var banner: String) : Serializable {
 
 }
