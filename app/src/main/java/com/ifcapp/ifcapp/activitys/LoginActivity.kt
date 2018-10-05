@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "CPF ou Senha inválidos.", Toast.LENGTH_LONG).show();
         }
         else {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent);
         }
     }

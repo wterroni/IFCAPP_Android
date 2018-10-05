@@ -1,6 +1,5 @@
 package com.ifcapp.ifcapp.activitys
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -8,15 +7,14 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 import com.ifcapp.ifcapp.R
 import com.ifcapp.ifcapp.adapters.AgendaListAdapter
 import com.ifcapp.ifcapp.models.Agenda
-import kotlinx.android.synthetic.main.activity_home.*
-import java.io.Serializable
+import kotlinx.android.synthetic.main.activity_agenda.*
 
 class HomeActivity : AppCompatActivity(), AgendaListAdapter.OnAgendaClick {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_agenda)
 
         val recyclerView = recyclerViewAgenda
         recyclerView.adapter = AgendaListAdapter(this, agenda(), this)

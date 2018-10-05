@@ -5,4 +5,7 @@
     <string name="cpf">CPF</string>
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
+    <string name="menu_header">Menu</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
