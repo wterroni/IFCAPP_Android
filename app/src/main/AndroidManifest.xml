@@ -16,9 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.HomeActivity" />
+        <activity android:name=".activitys.AgendaActivity" />
         <activity android:name=".activitys.ItemAgendaActivity" />
-        <activity android:name=".activitys.MainActivity"></activity>
+        <activity android:name=".activitys.MainActivity" />
+        <activity
+            android:name=".activitys.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activitys.PerfilActivity"></activity>
     </application>
 
 </manifest>

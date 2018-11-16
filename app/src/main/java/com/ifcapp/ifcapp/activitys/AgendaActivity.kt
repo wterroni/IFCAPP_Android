@@ -2,15 +2,13 @@ package com.ifcapp.ifcapp.activitys
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.StaggeredGridLayoutManager
 import com.ifcapp.ifcapp.R
 import com.ifcapp.ifcapp.adapters.AgendaListAdapter
 import com.ifcapp.ifcapp.models.Agenda
 import kotlinx.android.synthetic.main.activity_agenda.*
 
-class HomeActivity : AppCompatActivity(), AgendaListAdapter.OnAgendaClick {
-
+class AgendaActivity : BaseActivity(), AgendaListAdapter.OnAgendaClick {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +19,6 @@ class HomeActivity : AppCompatActivity(), AgendaListAdapter.OnAgendaClick {
 
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
-
-        // Set toolbar title/app title
-        my_toolbar!!.title = "Formosa de Cristo APP"
     }
 
     private fun agenda(): List<Agenda> {

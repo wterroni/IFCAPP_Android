@@ -23,9 +23,6 @@ class ItemAgendaActivity() : AppCompatActivity() {
         TituloTextView.text = selectedAgenda.title
         DescricaoTextView.text = selectedAgenda.description
         setBanner(selectedAgenda)
-
-        // Set toolbar title/app title
-        itemToolbar!!.title = "Formosa de Cristo APP"
     }
     fun setBanner(selectedAgenda : Agenda) {
         when (selectedAgenda.banner) {

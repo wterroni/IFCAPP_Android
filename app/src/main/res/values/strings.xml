@@ -8,4 +8,7 @@
     <string name="menu_header">Menu</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="nome">Nome</string>
+    <string name="hint_nome">Digite seu nome</string>
 </resources>

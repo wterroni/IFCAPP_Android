@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ifcapp.ifcapp.models.Agenda
 import android.content.Context
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.widget.TextView
 import com.ifcapp.ifcapp.R
@@ -38,6 +39,8 @@ class AgendaListAdapter(private val listener: OnAgendaClick,
         init {
             dataCulto = itemView.agenda_item_title
             nomeCulto = itemView.agenda_item_title
+
+            itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary))
 
             itemView.setOnClickListener{
                 listener.onAgendaClick(item)
