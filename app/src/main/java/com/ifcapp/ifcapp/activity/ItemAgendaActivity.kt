@@ -1,14 +1,11 @@
-package com.ifcapp.ifcapp.activitys
+package com.ifcapp.ifcapp.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Switch
 import com.ifcapp.ifcapp.R
 import com.ifcapp.ifcapp.models.Agenda
-import kotlinx.android.synthetic.main.activity_agenda.*
 import kotlinx.android.synthetic.main.activity_item_agenda.*
 
-class ItemAgendaActivity() : AppCompatActivity() {
+class ItemAgendaActivity() : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -4,17 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/dimen_13dp"
-    android:layout_marginBottom="@dimen/dimen_13dp"
-    android:layout_marginStart="@dimen/dimen_13dp"
-    android:layout_marginEnd="@dimen/dimen_13dp"
-    tools:context=".activitys.PerfilActivity">
+    android:background="@color/colorSecundary"
+    tools:context=".activity.PerfilActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_13dp">
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/nomeTextView"
         android:text="@string/nome"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -23,7 +27,90 @@
         android:layout_height="wrap_content"
         android:id="@+id/nomeEditText"
         android:hint="@string/hint_nome"
+        android:textSize="@dimen/dimen_13dp"
         app:layout_constraintTop_toBottomOf="@id/nomeTextView"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/cpfTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cpf"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEditText" />
+
+        <com.ifcapp.ifcapp.componentes.CpfEditText
+            android:id="@+id/edtCpfCnpj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_cpf"
+            android:inputType="number"
+            android:singleLine="true"
+            android:textSize="@dimen/dimen_13dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cpfTextView" />
+
+    <TextView
+        android:id="@+id/estadoCivilTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/estado_civil"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/estadoCivilSpinner"
+        android:tooltipText="Selecione"
+        android:textColor="@android:color/white"
+        android:popupBackground="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estadoCivilTextView">
+    </Spinner>
+
+    <TextView
+        android:id="@+id/DataNascimentoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_nascimento"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
+
+    <EditText
+        android:id="@+id/dataNascimentoButton"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:hint="Selecione a data"
+        android:clickable="true"
+        android:textSize="@dimen/dimen_13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DataNascimentoTextView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/telefone"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/estadoCivilSpinner" />
+
+    <EditText
+        android:id="@+id/FoneEditText"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        android:textSize="@dimen/dimen_13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    </android.support.constraint.ConstraintLayout>
+
 
 </android.support.constraint.ConstraintLayout>

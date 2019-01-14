@@ -6,8 +6,8 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".activitys.AgendaActivity">
+    android:background="@color/colorSecundary"
+    tools:context=".activity.AgendaActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerViewAgenda"

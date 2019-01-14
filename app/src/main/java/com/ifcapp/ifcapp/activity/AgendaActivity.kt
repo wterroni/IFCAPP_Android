@@ -1,4 +1,4 @@
-package com.ifcapp.ifcapp.activitys
+package com.ifcapp.ifcapp.activity
 
 import android.content.Intent
 import android.os.Bundle
