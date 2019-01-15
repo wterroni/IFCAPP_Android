@@ -13,7 +13,17 @@
     <string name="estado_civil">Estado Civil</string>
     <string name="data_nascimento">Data de Nascimento</string>
     <string name="telefone">Telefone</string>
+    <string name="cep">CEP</string>
+    <string name="endereco">Endereço</string>
+    <string name="numero">Número</string>
+    <string name="complemento">Complemento</string>
+    <string name="cidade">Cidade</string>
+    <string name="estado">Estado</string>
     <string name="hint_nome">Digite seu nome</string>
+    <string name="hint_cep">Digite seu CEP</string>
+    <string name="hint_endereco">Exemplo: Rua Augusta, Avenida Paulista</string>
+    <string name="hint_complemento">Exemplo: Bloco 01 Apto 02</string>
+    <string name="hint_cidade">Exemplo: Santo André</string>
     <string-array name="estado_civil_array">
         <item>Selecione..</item>
         <item>Solteiro(a)</item>
@@ -21,5 +31,35 @@
         <item>Separado(a)</item>
         <item>Divorciado(a)</item>
         <item>Viúvo(a)</item>
+    </string-array>
+    <string-array name="estado_array">
+        <item>UF</item>
+        <item>AC</item>
+        <item>AL</item>
+        <item>AM</item>
+        <item>AP</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MG</item>
+        <item>MS</item>
+        <item>MT</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>PR</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>RS</item>
+        <item>SC</item>
+        <item>SE</item>
+        <item>SP</item>
+        <item>TO</item>
     </string-array>
 </resources>

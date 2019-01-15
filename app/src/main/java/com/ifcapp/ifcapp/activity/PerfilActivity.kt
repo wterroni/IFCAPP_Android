@@ -5,11 +5,19 @@ import com.ifcapp.ifcapp.R
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_perfil.*
 import android.app.DatePickerDialog
+import com.ifcapp.ifcapp.controller.CepListener
 import com.ifcapp.ifcapp.controller.PerfilController
+import com.ifcapp.ifcapp.models.Cep
 import java.util.*
+import com.ifcapp.ifcapp.Util.Util.Companion.closeKeyboard
 
 
-class PerfilActivity : BaseActivity() {
+class PerfilActivity : BaseActivity(), CepListener {
+    override fun onCepAvailable(cep: Cep) {
+        enderecoTextView.setText(cep.logradouro)
+        cidadeEditText.setText(cep.localidade)
+        closeKeyboard(this, cepEditText)
+    }
 
     private var mYear: Int = 0
     var mMonth: Int = 0
@@ -26,12 +34,13 @@ class PerfilActivity : BaseActivity() {
         setDataNascimento()
         setFoneTextChangedListener()
         setOnClickTeste()
+        setEstadoSpinner()
     }
 
     fun setOnClickTeste() {
-        btnTeste.setOnClickListener {
-            var teste = PerfilController()
-            teste.getCEP(this)
+        btnCep.setOnClickListener {
+            var teste = PerfilController(this)
+            teste.getCEP(cepEditText.text.toString())
         }
     }
 
@@ -44,6 +53,13 @@ class PerfilActivity : BaseActivity() {
                 R.array.estado_civil_array, R.layout.spinner_item)
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         estadoCivilSpinner.adapter = adapter
+    }
+
+    fun setEstadoSpinner() {
+        val adapter = ArrayAdapter.createFromResource(this,
+                R.array.estado_array, R.layout.spinner_item)
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+        estadoSpinner.adapter = adapter
     }
 
     fun setDataNascimento() {
@@ -67,5 +83,12 @@ class PerfilActivity : BaseActivity() {
                 },
                 mYear, mMonth, mDay)
         datePickerDialog.show()
+    }
+
+
+
+    fun setDadosCep() {
+
+
     }
 }
