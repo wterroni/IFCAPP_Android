@@ -5,6 +5,7 @@ import com.ifcapp.ifcapp.R
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_perfil.*
 import android.app.DatePickerDialog
+import com.ifcapp.ifcapp.controller.PerfilController
 import java.util.*
 
 
@@ -24,6 +25,14 @@ class PerfilActivity : BaseActivity() {
         setEstadoCivilSpinner()
         setDataNascimento()
         setFoneTextChangedListener()
+        setOnClickTeste()
+    }
+
+    fun setOnClickTeste() {
+        btnTeste.setOnClickListener {
+            var teste = PerfilController()
+            teste.getCEP(this)
+        }
     }
 
     fun setFoneTextChangedListener() {
