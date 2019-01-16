@@ -22,7 +22,8 @@
         <activity android:name=".activity.AgendaActivity" />
         <activity android:name=".activity.ItemAgendaActivity" />
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.PerfilActivity"></activity>
+        <activity android:name=".activity.PerfilActivity" />
+        <activity android:name=".activity.MainPerfilActivity"></activity>
     </application>
 
 </manifest>

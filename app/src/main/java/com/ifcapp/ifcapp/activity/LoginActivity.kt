@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import com.ifcapp.ifcapp.R
+import com.ifcapp.ifcapp.Util.Util
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
         buttonEntrar.setOnClickListener {
             checkLoginIsTrue();
         }
+        Util.openKeyboard(this, editTextSenha)
     }
 
     private fun checkLoginIsTrue() {

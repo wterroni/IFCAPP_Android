@@ -1,34 +1,32 @@
-package com.ifcapp.ifcapp.activity
+package com.ifcapp.ifcapp.fragment
 
-import android.os.Bundle
-import com.ifcapp.ifcapp.R
-import android.widget.ArrayAdapter
-import kotlinx.android.synthetic.main.activity_perfil.*
+import android.app.Activity
 import android.app.DatePickerDialog
+import android.os.Bundle
+import android.support.v4.app.Fragment
+import android.widget.ArrayAdapter
+import com.ifcapp.ifcapp.R
+import com.ifcapp.ifcapp.Util.Util
 import com.ifcapp.ifcapp.controller.CepListener
 import com.ifcapp.ifcapp.controller.PerfilController
 import com.ifcapp.ifcapp.models.Cep
+import kotlinx.android.synthetic.main.activity_perfil.*
 import java.util.*
-import com.ifcapp.ifcapp.Util.Util.Companion.closeKeyboard
-import com.ifcapp.ifcapp.Util.Util.Companion.openKeyboard
-import com.ifcapp.ifcapp.Util.Util.Companion.setPosicaoEstado
+import android.view.*
 
-
-class PerfilActivity : BaseActivity(), CepListener {
-    override fun onCepAvailable(cep: Cep) {
-        setDadosCep(cep)
-        closeKeyboard(this, cepEditText)
-        numeroEditText.requestFocus()
-        openKeyboard(this, numeroEditText)
-    }
+class PerfilPessoalFragment : BaseFragment(), CepListener {
 
     private var mYear: Int = 0
     var mMonth: Int = 0
     var mDay: Int = 0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_perfil)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_perfil_pessoal, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         init()
     }
 
@@ -52,14 +50,14 @@ class PerfilActivity : BaseActivity(), CepListener {
     }
 
     fun setEstadoCivilSpinner() {
-        val adapter = ArrayAdapter.createFromResource(this,
+        val adapter = ArrayAdapter.createFromResource(activity as Activity,
                 R.array.estado_civil_array, R.layout.spinner_item)
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         estadoCivilSpinner.adapter = adapter
     }
 
     fun setEstadoSpinner() {
-        val adapter = ArrayAdapter.createFromResource(this,
+        val adapter = ArrayAdapter.createFromResource(activity as Activity,
                 R.array.estado_array, R.layout.spinner_item)
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         estadoSpinner.adapter = adapter
@@ -77,7 +75,7 @@ class PerfilActivity : BaseActivity(), CepListener {
         mMonth = c.get(Calendar.MONTH)
         mDay = c.get(Calendar.DAY_OF_MONTH)
 
-        val datePickerDialog = DatePickerDialog(this,
+        val datePickerDialog = DatePickerDialog(activity as Activity,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear,
                                                      dayOfMonth ->
                     dataNascimentoButton
@@ -88,12 +86,17 @@ class PerfilActivity : BaseActivity(), CepListener {
         datePickerDialog.show()
     }
 
-
-
     fun setDadosCep(cep: Cep) {
         enderecoTextView.setText(cep.logradouro)
         cidadeEditText.setText(cep.localidade)
         bairroEditText.setText(cep.bairro)
-        estadoSpinner.setSelection(setPosicaoEstado(cep.uf))
+        estadoSpinner.setSelection(Util.setPosicaoEstado(cep.uf))
+    }
+
+    override fun onCepAvailable(cep: Cep) {
+        setDadosCep(cep)
+        Util.closeKeyboard(activity as Activity, cepEditText)
+        numeroEditText.requestFocus()
+        Util.openKeyboard(activity as Activity, numeroEditText)
     }
 }

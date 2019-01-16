@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.PerfilPessoalFragment">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorSecundary"
+            android:layout_marginTop="@dimen/dimen_50dp">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dimen_13dp"
+                android:layout_marginRight="@dimen/dimen_13dp"
+                android:layout_marginLeft="@dimen/dimen_13dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nomeTextView"
+                android:text="@string/nome"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nomeEditText"
+                android:hint="@string/hint_nome"
+                android:textSize="@dimen/dimen_13dp"
+                app:layout_constraintTop_toBottomOf="@id/nomeTextView"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/cpfTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cpf"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nomeEditText" />
+
+            <com.ifcapp.ifcapp.componentes.CpfEditText
+                android:id="@+id/edtCpfCnpj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_cpf"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="@dimen/dimen_13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cpfTextView" />
+
+            <TextView
+                android:id="@+id/estadoCivilTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estado_civil"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/estadoCivilSpinner"
+                android:tooltipText="Selecione"
+                android:textColor="@android:color/white"
+                android:popupBackground="@color/colorPrimary"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estadoCivilTextView" />
+
+            <TextView
+                android:id="@+id/DataNascimentoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:text="@string/data_nascimento"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/estadoCivilTextView"
+                app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
+
+            <EditText
+                android:id="@+id/dataNascimentoButton"
+                android:layout_width="105dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:hint="Selecione a data"
+                android:textSize="@dimen/dimen_13dp"
+                app:layout_constraintStart_toEndOf="@+id/estadoCivilSpinner"
+                app:layout_constraintTop_toBottomOf="@+id/DataNascimentoTextView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:text="@string/telefone"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/DataNascimentoTextView"
+                app:layout_constraintTop_toTopOf="@+id/DataNascimentoTextView" />
+
+            <EditText
+                android:id="@+id/FoneEditText"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:ems="10"
+                android:inputType="phone"
+                android:textSize="@dimen/dimen_13dp"
+                app:layout_constraintStart_toEndOf="@+id/dataNascimentoButton"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/cep"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/estadoCivilSpinner" />
+
+            <EditText
+                android:id="@+id/cepEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/hint_cep"
+                android:textSize="@dimen/dimen_13dp"
+                android:ems="8"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/btnCep"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:text="Buscar"
+                android:textSize="@dimen/dimen_9dp"
+                app:layout_constraintStart_toEndOf="@+id/cepEditText"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/endereco"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_17dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cepEditText" />
+
+            <EditText
+                android:id="@+id/enderecoTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_endereco"
+                android:textSize="@dimen/dimen_13dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <TextView
+                android:id="@+id/numeroTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/numero"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_17dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enderecoTextView" />
+
+            <EditText
+                android:id="@+id/numeroEditText"
+                android:layout_width="@dimen/dimen_50dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/dimen_13dp"
+                android:ems="5"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numeroTextView" />
+
+            <TextView
+                android:id="@+id/complementoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/dimen_17dp"
+                android:text="@string/complemento"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/numeroTextView"
+                app:layout_constraintTop_toBottomOf="@+id/enderecoTextView" />
+
+            <EditText
+                android:id="@+id/complementoEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="@dimen/dimen_13dp"
+                android:hint="@string/hint_complemento"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/numeroEditText"
+                app:layout_constraintTop_toBottomOf="@+id/complementoTextView" />
+
+            <TextView
+                android:id="@+id/bairroTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bairro"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+
+            <EditText
+                android:id="@+id/bairroEditText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="@dimen/dimen_13dp"
+                android:hint="@string/hint_bairro"
+                app:layout_constraintTop_toBottomOf="@+id/bairroTextView" />
+
+            <TextView
+                android:id="@+id/cidadeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cidade"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bairroEditText" />
+
+            <EditText
+                android:id="@+id/cidadeEditText"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="@dimen/dimen_13dp"
+                android:hint="@string/hint_cidade"
+                app:layout_constraintTop_toBottomOf="@+id/cidadeTextView" />
+
+            <TextView
+                android:id="@+id/ufTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/estado"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/cidadeEditText"
+                app:layout_constraintTop_toBottomOf="@+id/bairroEditText" />
+
+            <Spinner
+                android:id="@+id/estadoSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:popupBackground="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:tooltipText="Selecione"
+                app:layout_constraintStart_toEndOf="@+id/cidadeEditText"
+                app:layout_constraintTop_toBottomOf="@+id/ufTextView" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </ScrollView>

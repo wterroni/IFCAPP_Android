@@ -21,7 +21,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     private fun callActivity (item: MenuItem): Boolean {
         when (item.toString()) {
             MenuConstantes.AGENDA -> startActivity(Intent(this, AgendaActivity::class.java))
-            MenuConstantes.PROFILE -> startActivity(Intent(this, PerfilActivity::class.java))
+            MenuConstantes.PROFILE -> startActivity(Intent(this, MainPerfilActivity::class.java))
         }
         return true;
     }

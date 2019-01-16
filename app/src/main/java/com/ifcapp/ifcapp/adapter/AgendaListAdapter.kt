@@ -1,4 +1,4 @@
-package com.ifcapp.ifcapp.adapters
+package com.ifcapp.ifcapp.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.Adapter

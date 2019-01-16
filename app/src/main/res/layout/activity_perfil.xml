@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -178,6 +178,8 @@
             android:layout_width="@dimen/dimen_50dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/dimen_13dp"
+            android:ems="5"
+            android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numeroTextView" />
 
@@ -205,13 +207,32 @@
             app:layout_constraintTop_toBottomOf="@+id/complementoTextView" />
 
         <TextView
+            android:id="@+id/bairroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bairro"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+
+        <EditText
+            android:id="@+id/bairroEditText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="@dimen/dimen_13dp"
+            android:hint="@string/hint_bairro"
+            app:layout_constraintTop_toBottomOf="@+id/bairroTextView" />
+
+        <TextView
             android:id="@+id/cidadeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cidade"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/bairroEditText" />
 
         <EditText
             android:id="@+id/cidadeEditText"
@@ -231,7 +252,7 @@
             android:text="@string/estado"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/cidadeEditText"
-            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/bairroEditText" />
 
         <Spinner
             android:id="@+id/estadoSpinner"
@@ -247,4 +268,4 @@
     </android.support.constraint.ConstraintLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</ScrollView>
