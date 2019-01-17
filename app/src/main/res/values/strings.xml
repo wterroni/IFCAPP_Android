@@ -22,12 +22,37 @@
     <string name="estado">Estado</string>
     <string name="cadastro">Membro desde:</string>
     <string name="batizado">Batizado:</string>
+    <string name="departamento">Departamento:</string>
+    <string name="escolaridade">Escolaridade:</string>
+    <string name="instituicao">Instituição</string>
+    <string name="curso">Curso</string>
+    <string name="buscar">Bucar</string>
+
+
     <string name="hint_nome">Digite seu nome</string>
     <string name="hint_cep">Digite seu CEP</string>
     <string name="hint_endereco">Exemplo: Rua Augusta, Avenida Paulista</string>
     <string name="hint_complemento">Exemplo: Bloco 01 Apto 02</string>
     <string name="hint_cidade">Exemplo: Santo André</string>
     <string name="hint_bairro">Exemplo: Parque Jaçatuba</string>
+    <string name="hint_data">Selecione a Data</string>
+    <string name="hint_selecione">Selecione</string>
+    <string name="hint_instituicao">Exemplo: UFA ABC</string>
+    <string name="hint_curso">Exemplo: Administração</string>
+
+
+    <string name="departamento_obreiros">Obreiros</string>
+    <string name="departamento_louvor">Louvor</string>
+    <string name="departamento_jovens">Jovens</string>
+    <string name="departamento_med">MED</string>
+    <string name="departamento_bercario">Berçario</string>
+    <string name="departamento_som">Som</string>
+    <string name="departamento_multimidia">Multimídia</string>
+    <string name="departamento_voluntarios">Voluntários</string>
+    <string name="departamento_projsocial">Projeto Social</string>
+
+
+
     <string-array name="estado_civil_array">
         <item>Selecione..</item>
         <item>Solteiro(a)</item>
@@ -71,5 +96,18 @@
         <item>Selecione..</item>
         <item>Sim</item>
         <item>Não</item>
+    </string-array>
+
+    <string-array name="escolaridade_array">
+        <item>Selecione..</item>
+        <item>Fundamental Incompleto</item>
+        <item>Fundamental Completo</item>
+        <item>Médio Incompleto</item>
+        <item>Médio Completo</item>
+        <item>Superior Incompleto</item>
+        <item>Superior Completo</item>
+        <item>Pós Graduação</item>
+        <item>Doutorado</item>
+        <item>Mestrado</item>
     </string-array>
 </resources>

@@ -3,16 +3,17 @@ package com.ifcapp.ifcapp.fragment
 import android.app.Activity
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.widget.ArrayAdapter
-import com.ifcapp.ifcapp.R
 import com.ifcapp.ifcapp.Util.Util
 import com.ifcapp.ifcapp.controller.CepListener
 import com.ifcapp.ifcapp.controller.PerfilController
 import com.ifcapp.ifcapp.models.Cep
-import kotlinx.android.synthetic.main.activity_perfil.*
 import java.util.*
 import android.view.*
+import com.ifcapp.ifcapp.R
+import kotlinx.android.synthetic.main.fragment_perfil_pessoal.*
+import java.text.SimpleDateFormat
+
 
 class PerfilPessoalFragment : BaseFragment(), CepListener {
 
@@ -22,7 +23,7 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_perfil_pessoal, container, false)
+        return inflater.inflate(com.ifcapp.ifcapp.R.layout.fragment_perfil_pessoal, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,9 +79,14 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
         val datePickerDialog = DatePickerDialog(activity as Activity,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear,
                                                      dayOfMonth ->
-                    dataNascimentoButton
-                            .setText(dayOfMonth.toString() +
-                                    "/" + (monthOfYear + 1) + "/" + year)
+
+                    c.set(Calendar.YEAR, year)
+                    c.set(Calendar.MONTH, monthOfYear)
+                    c.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                    val myFormat = "dd/MM/yyyy"
+                    val sdf = SimpleDateFormat(myFormat, Locale.US)
+                    dataNascimentoButton.setText(sdf.format(c.time))
                 },
                 mYear, mMonth, mDay)
         datePickerDialog.show()

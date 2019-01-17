@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.ifcapp.ifcapp.R
+
 import kotlinx.android.synthetic.main.fragment_perfil_igreja.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -31,6 +33,7 @@ class PerfilIgrejaFragment : BaseFragment() {
     fun init() {
         setDataMembro()
         setBatizadoSpinner()
+        setEscolaridadeSpinner()
     }
 
     fun setDataMembro() {
@@ -48,8 +51,14 @@ class PerfilIgrejaFragment : BaseFragment() {
         val datePickerDialog = DatePickerDialog(activity as Activity,
                 DatePickerDialog.OnDateSetListener { view, year, monthOfYear,
                                                      dayOfMonth ->
-                    dataMembroButton
-                            .setText(dayOfMonth.toString() + "/" + (monthOfYear + 1) + "/" + year)
+
+                    c.set(Calendar.YEAR, year)
+                    c.set(Calendar.MONTH, monthOfYear)
+                    c.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+
+                    val myFormat = "dd/MM/yyyy"
+                    val sdf = SimpleDateFormat(myFormat, Locale.US)
+                    dataMembroButton.setText(sdf.format(c.time))
                 },
                 mYear, mMonth, mDay)
         datePickerDialog.show()
@@ -60,5 +69,12 @@ class PerfilIgrejaFragment : BaseFragment() {
                 R.array.sim_nao, R.layout.spinner_item)
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         batizadoSpinner.adapter = adapter
+    }
+
+    fun setEscolaridadeSpinner() {
+        val adapter = ArrayAdapter.createFromResource(activity as Activity,
+                R.array.escolaridade_array, R.layout.spinner_item)
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
+        escolaridadeSpinner.adapter = adapter
     }
 }

@@ -8,7 +8,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/colorSecundary"
             android:layout_marginTop="@dimen/dimen_50dp">
 
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/nomeEditText"
                 android:hint="@string/hint_nome"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 app:layout_constraintTop_toBottomOf="@id/nomeTextView"
                 app:layout_constraintStart_toStartOf="parent"/>
 
@@ -53,7 +53,7 @@
                 android:hint="@string/hint_cpf"
                 android:inputType="number"
                 android:singleLine="true"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cpfTextView" />
 
@@ -70,7 +70,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/estadoCivilSpinner"
-                android:tooltipText="Selecione"
                 android:textColor="@android:color/white"
                 android:popupBackground="@color/colorPrimary"
                 android:layout_marginTop="@dimen/dimen_8dp"
@@ -92,62 +91,63 @@
                 android:layout_width="105dp"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:hint="Selecione a data"
-                android:textSize="@dimen/dimen_13dp"
+                android:focusable="false"
+                android:hint="@string/hint_data"
+                android:textSize="@dimen/dimen_13sp"
                 app:layout_constraintStart_toEndOf="@+id/estadoCivilSpinner"
                 app:layout_constraintTop_toBottomOf="@+id/DataNascimentoTextView" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:text="@string/telefone"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/DataNascimentoTextView"
-                app:layout_constraintTop_toTopOf="@+id/DataNascimentoTextView" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/telefone"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/estadoCivilSpinner" />
 
-            <EditText
-                android:id="@+id/FoneEditText"
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:ems="10"
-                android:inputType="phone"
-                android:textSize="@dimen/dimen_13dp"
-                app:layout_constraintStart_toEndOf="@+id/dataNascimentoButton"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                <EditText
+                    android:id="@+id/FoneEditText"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:textSize="@dimen/dimen_13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/cep"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/estadoCivilSpinner" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cep"
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FoneEditText" />
 
             <EditText
                 android:id="@+id/cepEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:hint="@string/hint_cep"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 android:ems="8"
                 android:inputType="number"
+                android:autofillHints="@string/hint_cep"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <Button
                 android:id="@+id/btnCep"
-                android:layout_width="70dp"
-                android:layout_height="35dp"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/dimen_8dp"
-                android:text="Buscar"
-                android:textSize="@dimen/dimen_9dp"
+                android:text="@string/buscar"
+                android:textSize="@dimen/dimen_9sp"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimary"
                 app:layout_constraintStart_toEndOf="@+id/cepEditText"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -166,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_endereco"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -184,7 +184,7 @@
                 android:id="@+id/numeroEditText"
                 android:layout_width="@dimen/dimen_50dp"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 android:ems="5"
                 android:inputType="number"
                 app:layout_constraintStart_toStartOf="parent"
@@ -207,7 +207,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 android:hint="@string/hint_complemento"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/numeroEditText"
@@ -228,8 +228,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 android:hint="@string/hint_bairro"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bairroTextView" />
 
             <TextView
@@ -247,8 +248,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:textSize="@dimen/dimen_13dp"
+                android:textSize="@dimen/dimen_13sp"
                 android:hint="@string/hint_cidade"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cidadeTextView" />
 
             <TextView
@@ -268,7 +270,6 @@
                 android:layout_marginStart="8dp"
                 android:popupBackground="@color/colorPrimary"
                 android:textColor="@android:color/white"
-                android:tooltipText="Selecione"
                 app:layout_constraintStart_toEndOf="@+id/cidadeEditText"
                 app:layout_constraintTop_toBottomOf="@+id/ufTextView" />
 

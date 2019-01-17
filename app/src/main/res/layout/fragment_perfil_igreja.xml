@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.PerfilIgrejaFragment">
+    tools:context=".fragment.PerfilPessoalFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorSecundary"
         android:layout_marginTop="@dimen/dimen_50dp">
 
@@ -32,9 +32,10 @@
                 android:id="@+id/dataMembroButton"
                 android:layout_width="105dp"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:hint="Selecione a data"
-                android:textSize="@dimen/dimen_13dp"
+                android:focusable="false"
+                android:hint="@string/hint_data"
+                android:textSize="@dimen/dimen_13sp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/membroTextView" />
 
             <TextView
@@ -55,12 +56,212 @@
                 android:layout_marginTop="@dimen/dimen_8dp"
                 android:popupBackground="@color/colorPrimary"
                 android:textColor="@android:color/white"
-                android:tooltipText="Selecione"
+                android:tooltipText="@string/hint_selecione"
                 app:layout_constraintStart_toEndOf="@+id/dataMembroButton"
                 app:layout_constraintTop_toBottomOf="@+id/batizadoTextView" />
+
+            <TextView
+                android:id="@+id/departamentoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/departamento"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dataMembroButton" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/obreiroCheckBox"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <TextView
+                android:id="@+id/obreiroTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/departamento_obreiros"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_13dp"
+                app:layout_constraintStart_toEndOf="@+id/obreiroCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <CheckBox
+                android:id="@+id/louvorCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toEndOf="@+id/obreiroTextView"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <TextView
+                android:id="@+id/louvorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_13dp"
+                android:text="@string/departamento_louvor"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/louvorCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <CheckBox
+                android:id="@+id/jovensCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toEndOf="@+id/louvorTextView"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <TextView
+                android:id="@+id/medTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_13dp"
+                android:text="@string/departamento_med"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/jovensCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <CheckBox
+                android:id="@+id/bercarioCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toEndOf="@+id/medTextView"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <TextView
+                android:id="@+id/bercarioTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_13dp"
+                android:text="@string/departamento_bercario"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/bercarioCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+
+            <CheckBox
+                android:id="@+id/multimidiaCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/obreiroCheckBox" />
+
+            <TextView
+                android:id="@+id/multimidiaTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:text="@string/departamento_multimidia"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/multimidiaCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/obreiroCheckBox" />
+
+            <CheckBox
+                android:id="@+id/voluntariosCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toEndOf="@+id/multimidiaTextView"
+                app:layout_constraintTop_toBottomOf="@+id/obreiroCheckBox" />
+
+            <TextView
+                android:id="@+id/voluntariosTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:text="@string/departamento_voluntarios"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/voluntariosCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/obreiroCheckBox" />
+
+            <CheckBox
+                android:id="@+id/socialCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toEndOf="@+id/voluntariosTextView"
+                app:layout_constraintTop_toBottomOf="@+id/obreiroCheckBox" />
+
+            <TextView
+                android:id="@+id/socialTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:text="@string/departamento_projsocial"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/socialCheckBox"
+                app:layout_constraintTop_toBottomOf="@+id/obreiroCheckBox" />
+
+            <TextView
+                android:id="@+id/escolaridadeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/escolaridade"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/multimidiaCheckBox" />
+
+            <Spinner
+                android:id="@+id/escolaridadeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:popupBackground="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:tooltipText="@string/hint_selecione"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/escolaridadeTextView" />
+
+            <TextView
+                android:id="@+id/instituicaoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/instituicao"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/escolaridadeSpinner" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nomeEditText"
+                android:hint="@string/hint_instituicao"
+                android:textSize="@dimen/dimen_13dp"
+                app:layout_constraintTop_toBottomOf="@id/instituicaoTextView"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/cursoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/curso"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nomeEditText" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cursoEditText"
+                android:hint="@string/hint_curso"
+                android:textSize="@dimen/dimen_13dp"
+                android:windowSoftInputMode="adjustResize"
+                app:layout_constraintTop_toBottomOf="@id/cursoTextView"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         </android.support.constraint.ConstraintLayout>
 
     </android.support.constraint.ConstraintLayout>
 
-</FrameLayout>
+    </ScrollView>
