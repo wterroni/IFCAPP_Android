@@ -13,4 +13,5 @@ class Cep : Serializable {
     lateinit var unidade : String
     lateinit var ibge : String
     lateinit var gia : String
+    var erro : String = ""
 }

@@ -10,6 +10,7 @@ import com.ifcapp.ifcapp.controller.PerfilController
 import com.ifcapp.ifcapp.models.Cep
 import java.util.*
 import android.view.*
+import android.widget.Toast
 import com.ifcapp.ifcapp.R
 import kotlinx.android.synthetic.main.fragment_perfil_pessoal.*
 import java.text.SimpleDateFormat
@@ -35,14 +36,29 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
         setEstadoCivilSpinner()
         setDataNascimento()
         setFoneTextChangedListener()
-        setOnClickTeste()
+        setCepOnClick()
         setEstadoSpinner()
     }
 
-    fun setOnClickTeste() {
+    fun setCepOnClick() {
         btnCep.setOnClickListener {
-            var teste = PerfilController(this)
-            teste.getCEP(cepEditText.text.toString())
+            onClickCep()
+        }
+    }
+
+    fun onClickCep() {
+        if (cepEditText.text.isEmpty()) {
+            Util.closeKeyboard(activity as Activity, cepEditText)
+            Toast.makeText(context, getString(R.string.valid_cep), Toast.LENGTH_LONG).show();
+        }
+        else if (cepEditText.text.length < 8) {
+            Util.closeKeyboard(activity as Activity, cepEditText)
+            Toast.makeText(context, getString(R.string.error_cep), Toast.LENGTH_LONG).show();
+        }
+        else {
+
+            var perfilController = PerfilController(this)
+            perfilController.getCEP(cepEditText.text.toString())
         }
     }
 
@@ -100,9 +116,16 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
     }
 
     override fun onCepAvailable(cep: Cep) {
-        setDadosCep(cep)
-        Util.closeKeyboard(activity as Activity, cepEditText)
-        numeroEditText.requestFocus()
-        Util.openKeyboard(activity as Activity, numeroEditText)
+        val erro = "true"
+        if (cep.erro.equals(erro)) {
+            Util.closeKeyboard(activity as Activity, cepEditText)
+            Toast.makeText(context, getString(R.string.error_cep), Toast.LENGTH_LONG).show();
+        }
+        else {
+            setDadosCep(cep)
+            Util.closeKeyboard(activity as Activity, cepEditText)
+            numeroEditText.requestFocus()
+            Util.openKeyboard(activity as Activity, numeroEditText)
+        }
     }
 }

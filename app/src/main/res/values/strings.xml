@@ -52,6 +52,10 @@
     <string name="departamento_projsocial">Projeto Social</string>
 
 
+    <string name="valid_cep">CEP em branco.</string>
+    <string name="error_cep">CEP inválido.</string>
+
+
 
     <string-array name="estado_civil_array">
         <item>Selecione..</item>

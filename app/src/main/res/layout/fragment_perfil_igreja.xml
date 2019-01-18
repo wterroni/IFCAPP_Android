@@ -130,20 +130,19 @@
                 android:id="@+id/bercarioCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimen_8dp"
-                android:layout_marginTop="@dimen/dimen_8dp"
-                app:layout_constraintStart_toEndOf="@+id/medTextView"
-                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/multimidiaCheckBox" />
 
             <TextView
                 android:id="@+id/bercarioTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_13dp"
-                android:text="@string/departamento_bercario"
+                android:text="@string/departamento_projsocial"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/bercarioCheckBox"
-                app:layout_constraintTop_toBottomOf="@+id/departamentoTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/multimidiaCheckBox" />
 
             <CheckBox
                 android:id="@+id/multimidiaCheckBox"
@@ -196,7 +195,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_15dp"
-                android:text="@string/departamento_projsocial"
+                android:text="@string/departamento_bercario"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/socialCheckBox"
                 app:layout_constraintTop_toBottomOf="@+id/obreiroCheckBox" />
@@ -205,11 +204,11 @@
                 android:id="@+id/escolaridadeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_10dp"
                 android:text="@string/escolaridade"
                 android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_13dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/multimidiaCheckBox" />
+                app:layout_constraintTop_toBottomOf="@+id/bercarioCheckBox" />
 
             <Spinner
                 android:id="@+id/escolaridadeSpinner"
