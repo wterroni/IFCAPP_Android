@@ -37,7 +37,7 @@
     <string name="hint_bairro">Exemplo: Parque Jaçatuba</string>
     <string name="hint_data">Selecione a Data</string>
     <string name="hint_selecione">Selecione</string>
-    <string name="hint_instituicao">Exemplo: UFA ABC</string>
+    <string name="hint_instituicao">Exemplo: UFABC</string>
     <string name="hint_curso">Exemplo: Administração</string>
 
 
@@ -45,7 +45,7 @@
     <string name="departamento_louvor">Louvor</string>
     <string name="departamento_jovens">Jovens</string>
     <string name="departamento_med">MED</string>
-    <string name="departamento_bercario">Berçario</string>
+    <string name="departamento_bercario">Berçário</string>
     <string name="departamento_som">Som</string>
     <string name="departamento_multimidia">Multimídia</string>
     <string name="departamento_voluntarios">Voluntários</string>

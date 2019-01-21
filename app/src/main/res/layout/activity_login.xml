@@ -14,7 +14,7 @@
         android:layout_width="@dimen/icon_login_width"
         android:layout_height="@dimen/icon_login_height"
         android:layout_marginTop="@dimen/icon_login_margin_top"
-        android:src="@drawable/iconifc"
+        android:src="@drawable/iconifc_black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
