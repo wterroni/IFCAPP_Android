@@ -54,6 +54,11 @@
 
     <string name="valid_cep">CEP em branco.</string>
     <string name="error_cep">CEP inválido.</string>
+    <string name="default_notification_channel_id">default_notification_channel_id</string>
+    <string name="default_notification_channel_name">default_notification_channel_name</string>
+    <string name="fcm_message">fcm_message</string>
+
+
 
 
 

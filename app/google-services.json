@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "506418157335",
+    "firebase_url": "https://formosa-de-cristo-18e7b.firebaseio.com",
+    "project_id": "formosa-de-cristo-18e7b",
+    "storage_bucket": "formosa-de-cristo-18e7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:506418157335:android:5eded060e600f991",
+        "android_client_info": {
+          "package_name": "com.ifcapp.ifcapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "506418157335-cgr09i1s8iac348787aqe13k65r0hvvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ifcapp.ifcapp",
+            "certificate_hash": "99cd2bbd9e748d5fb093f48f2ffaff38fab9c237"
+          }
+        },
+        {
+          "client_id": "506418157335-a4sg9fo7n16pvdj3g7riud0a2ui9vos3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm0Nr-EZXrmtvdwk9MIo0EEtO66Mak0ko"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "506418157335-a4sg9fo7n16pvdj3g7riud0a2ui9vos3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
