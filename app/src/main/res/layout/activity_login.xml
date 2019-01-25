@@ -20,30 +20,31 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textViewCPF"
+        android:id="@+id/emailTextView"
         android:layout_width="@dimen/dimen_0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="@dimen/dimen_8dp"
-        android:text="@string/cpf"
+        android:text="@string/email"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/item_foto" />
 
-    <com.ifcapp.ifcapp.componentes.CpfEditText
-        android:id="@+id/edtCpfCnpj"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="@dimen/dimen_0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_8dp"
-        android:inputType="number"
-        android:singleLine="true"
-        android:hint="@string/hint_cpf"
-        android:textSize="@dimen/dimen_13dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="@string/hint_email"
+        android:textSize="@dimen/dimen_13sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCPF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
 
     <TextView
         android:id="@+id/textViewSenha"
@@ -53,17 +54,19 @@
         android:layout_marginStart="@dimen/dimen_8dp"
         android:textStyle="bold"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintTop_toBottomOf="@id/edtCpfCnpj"
+        app:layout_constraintTop_toBottomOf="@id/emailEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+
 
     <EditText
         android:id="@+id/editTextSenha"
         android:layout_width="@dimen/dimen_0dp"
-        android:layout_marginStart="@dimen/dimen_8dp"
-        android:hint="@string/hint_password"
-        android:textSize="@dimen/dimen_13dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        android:layout_marginEnd="@dimen/dimen_8dp"
+        android:hint="@string/hint_password"
+        android:textSize="@dimen/dimen_13sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/textViewSenha"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,5 +84,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextSenha" />
+
+    <TextView
+        android:id="@+id/novoUsuarioTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:text="@string/novo_usuario"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:focusable="true"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
 
 </android.support.constraint.ConstraintLayout>
