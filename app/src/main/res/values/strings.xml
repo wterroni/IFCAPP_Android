@@ -31,7 +31,6 @@
     <string name="buscar">Buscar</string>
     <string name="novo_usuario">Novo Usuário?</string>
 
-
     <string name="hint_nome">Digite seu nome</string>
     <string name="hint_email">Digite seu e-mail</string>
     <string name="hint_cep">Digite seu CEP</string>
@@ -43,7 +42,7 @@
     <string name="hint_selecione">Selecione</string>
     <string name="hint_instituicao">Exemplo: UFABC</string>
     <string name="hint_curso">Exemplo: Administração</string>
-
+    <string name="hint_senha">A senha deve conter no mínimo 6 caracteres</string>
 
     <string name="departamento_obreiros">Obreiros</string>
     <string name="departamento_louvor">Louvor</string>
@@ -55,7 +54,6 @@
     <string name="departamento_voluntarios">Voluntários</string>
     <string name="departamento_projsocial">Projeto Social</string>
 
-
     <string name="valid_cep">CEP em branco.</string>
     <string name="error_cep">CEP inválido.</string>
     <string name="default_notification_channel_id">default_notification_channel_id</string>
@@ -63,9 +61,19 @@
     <string name="fcm_message">fcm_message</string>
 
     <string name="msg_login_sucesso">Login realizado com sucesso.</string>
-    <string name="msg_login_falha">Falha ao logar.</string>
+    <string name="msg_login_falha">E-mail ou senha inválido.</string>
     <string name="msg_novo_usuario_sucesso">Usuário cadastrado com sucesso.</string>
     <string name="msg_novo_usuario_falha">Ocorrei uma falha ao cadastrar seu usuário</string>
+    <string name="msg_logout_sair_titulo">Sair</string>
+    <string name="msg_logout_sair_msg">Você tem certeza que deseja sair?</string>
+    <string name="msg_email_branco">Favor preencher o e-mail.</string>
+    <string name="msg_senha_branco">Favor preencher a senha.</string>
+    <string name="msg_email_invalido">E-mail inválido.</string>
+    <string name="msg_senha_invalido">Senha deve conter pelo menos 6 caracteres.</string>
+
+    <string name="menu_perfil">Meus Dados</string>
+    <string name="menu_agenda">Agenda</string>
+    <string name="menu_logout">Sair</string>
 
     <string name="tag_login">LoginActivity</string>
 

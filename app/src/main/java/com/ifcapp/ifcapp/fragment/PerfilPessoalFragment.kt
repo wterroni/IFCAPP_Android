@@ -10,6 +10,7 @@ import com.ifcapp.ifcapp.controller.PerfilController
 import com.ifcapp.ifcapp.models.Cep
 import java.util.*
 import android.view.*
+import android.widget.DatePicker
 import android.widget.Toast
 import com.ifcapp.ifcapp.R
 import kotlinx.android.synthetic.main.fragment_perfil_pessoal.*
@@ -93,8 +94,8 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
         mDay = c.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(activity as Activity,
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear,
-                                                     dayOfMonth ->
+                DatePickerDialog.OnDateSetListener { _: DatePicker, year: Int,
+                                                     monthOfYear: Int, dayOfMonth: Int ->
 
                     c.set(Calendar.YEAR, year)
                     c.set(Calendar.MONTH, monthOfYear)

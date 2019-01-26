@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
 import com.ifcapp.ifcapp.R
 
 import kotlinx.android.synthetic.main.fragment_perfil_igreja.*
@@ -49,8 +50,8 @@ class PerfilIgrejaFragment : BaseFragment() {
         mDay = c.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(activity as Activity,
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear,
-                                                     dayOfMonth ->
+                DatePickerDialog.OnDateSetListener { _: DatePicker, year: Int,
+                                                     monthOfYear: Int, dayOfMonth: Int ->
 
                     c.set(Calendar.YEAR, year)
                     c.set(Calendar.MONTH, monthOfYear)

@@ -9,6 +9,7 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
 import android.support.v4.app.NotificationCompat
+import android.support.v4.content.ContextCompat
 import android.util.Log
 import com.firebase.jobdispatcher.FirebaseJobDispatcher
 import com.firebase.jobdispatcher.GooglePlayDriver
@@ -33,7 +34,7 @@ class FireBaseMessageService : FirebaseMessagingService(){
 
         // TODO(developer): Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
-        Log.d(TAG, "From: ${remoteMessage?.from}")
+        Log.d(TAG, "Mensagem Recebida: ${remoteMessage?.from}")
 
         // Check if message contains a data payload.
         remoteMessage?.data?.isNotEmpty()?.let {
@@ -71,7 +72,7 @@ class FireBaseMessageService : FirebaseMessagingService(){
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.
-        sendRegistrationToServer(token)
+        sendRegistrationToServer()
     }
     // [END on_new_token]
 
@@ -106,7 +107,7 @@ class FireBaseMessageService : FirebaseMessagingService(){
      *
      * @param token The new token.
      */
-    private fun sendRegistrationToServer(token: String?) {
+    private fun sendRegistrationToServer() {
         Log.d(TAG, "sendRegistrationToServer")
         // TODO: Implement this method to send token to your app server.
     }
@@ -126,7 +127,8 @@ class FireBaseMessageService : FirebaseMessagingService(){
         val channelId = getString(R.string.default_notification_channel_id)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, channelId)
-                .setSmallIcon(R.drawable.iconifc)
+                .setSmallIcon(R.drawable.iconifc_black)
+                .setColor(ContextCompat.getColor(this, R.color.colorPrimary))
                 .setContentTitle(getString(R.string.fcm_message))
                 .setContentText(messageBody)
                 .setAutoCancel(true)

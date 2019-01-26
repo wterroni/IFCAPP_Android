@@ -15,14 +15,14 @@ class AbasAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getItem(position: Int): Fragment {
-        return this.fragments!!.get(position)
+        return this.fragments.get(position)
     }
 
     override fun getCount(): Int {
-        return this.fragments!!.size
+        return this.fragments.size
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return this.titulos!!.get(position)
+        return this.titulos.get(position)
     }
 }

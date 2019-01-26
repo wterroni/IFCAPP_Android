@@ -9,7 +9,10 @@ import com.ifcapp.ifcapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.design.widget.NavigationView
 import android.view.View
+import com.google.firebase.auth.FirebaseAuth
 import com.ifcapp.ifcapp.Util.MenuConstantes
+import android.content.DialogInterface
+import android.support.v7.app.AlertDialog
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -22,8 +25,39 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         when (item.toString()) {
             MenuConstantes.AGENDA -> startActivity(Intent(this, AgendaActivity::class.java))
             MenuConstantes.PROFILE -> startActivity(Intent(this, MainPerfilActivity::class.java))
+            MenuConstantes.SAIR -> logout()
         }
         return true;
+    }
+
+    private fun logout() {
+        if (logoutMessage()) {
+            signOut()
+        }
+    }
+
+    private fun signOut() {
+        FirebaseAuth.getInstance().signOut();
+        finish()
+        startActivity(Intent(this, LoginActivity::class.java))
+    }
+
+    private fun logoutMessage() : Boolean {
+        var logout = false
+        AlertDialog.Builder(this)
+                .setTitle(getString(R.string.msg_logout_sair_titulo))
+                .setMessage(getString(R.string.msg_logout_sair_msg))
+                .setPositiveButton("Sim") { _, _ ->
+                    signOut()
+                }
+                .setNegativeButton("não", null)
+                .show()
+
+        return logout
+    }
+
+    override fun onBackPressed() {
+        logout()
     }
 
     private lateinit var mDrawerLayout: DrawerLayout

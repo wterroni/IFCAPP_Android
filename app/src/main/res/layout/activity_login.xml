@@ -14,7 +14,7 @@
         android:layout_width="@dimen/icon_login_width"
         android:layout_height="@dimen/icon_login_height"
         android:layout_marginTop="@dimen/icon_login_margin_top"
-        android:src="@drawable/iconifc_black"
+        android:src="@mipmap/ic_launcher_round"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dimen_8dp"
-        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
         android:text="@string/novo_usuario"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
