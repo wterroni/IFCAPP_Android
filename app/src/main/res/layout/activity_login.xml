@@ -73,13 +73,18 @@
         app:layout_constraintStart_toStartOf="parent"
         android:inputType="textPassword" />
 
-    <Button
+    <io.rmiri.buttonloading.ButtonLoading
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_40dp"
         android:id="@+id/btnEntrar"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:text="@string/entrar"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorWhite"
+        app:BL_backgroundColor="#80ffffff"
+        app:BL_circleColor="@color/colorPrimary"
+        app:BL_circleColorSecond="@color/colorWhiteTransparent"
+        app:BL_enable="true"
+        app:BL_stateShow="normal"
+        app:BL_text="Login"
+        app:BL_textColor="#FFFFFF"
+        app:BL_textSize="@dimen/dimen_13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -22,6 +22,7 @@
     <dimen name="dimen_35dp">35dp</dimen>
     <dimen name="dimen_40dp">40dp</dimen>
     <dimen name="dimen_50dp">50dp</dimen>
+    <dimen name="dimen_60dp">60dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="dimen_8sp">8sp</dimen>

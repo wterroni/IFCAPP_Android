@@ -2,10 +2,14 @@ package com.ifcapp.ifcapp.activity
 
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -14,6 +18,9 @@ import com.ifcapp.ifcapp.Util.Util
 import kotlinx.android.synthetic.main.activity_login.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import io.rmiri.buttonloading.ButtonLoading
+
+
 
 
 
@@ -62,9 +69,43 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setButton() {
-        btnEntrar.setOnClickListener {
-            loginAction();
-        }
+        btnEntrar.setOnButtonLoadingListener(object : ButtonLoading.OnButtonLoadingListener {
+            override fun onClick() {
+                if (isConnected()) {
+                    loginAction()
+                }
+                else {
+                    erroConection()
+                    finishLoading()
+                }
+            }
+
+            override fun onStart() {
+            }
+
+            override fun onFinish() {
+            }
+        })
+
+    }
+
+    private fun erroConection () {
+        Toast.makeText(this, getString(R.string.msg_error_network),
+                Toast.LENGTH_SHORT).show()
+    }
+
+    fun isConnected () : Boolean {
+        val connectivityManager = baseContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
+        return activeNetwork?.isConnectedOrConnecting == true
+    }
+
+    internal fun finishLoading() {
+        btnEntrar.setProgress(false)
+    }
+
+    internal fun finishLoadingWithDelay() {
+        Handler().postDelayed({ btnEntrar.setProgress(false); updateUI(user) }, 1000)
     }
 
     private fun setNovoUsuario() {
@@ -87,6 +128,9 @@ class LoginActivity : AppCompatActivity() {
             if (validaCampos() && validaSenha()) {
                 criaUsuario()
             }
+            else {
+                finishLoading()
+            }
         } else {
             loginUser()
         }
@@ -108,15 +152,19 @@ class LoginActivity : AppCompatActivity() {
                     ?.addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             Log.d(TAG, getString(R.string.msg_login_sucesso))
-                            val user = mAuth?.getCurrentUser()
-                            updateUI(user)
+                            user = mAuth?.getCurrentUser()
+                            finishLoadingWithDelay()
+
                         } else {
                             Log.w(TAG, getString(R.string.msg_login_falha), task.exception)
                             Toast.makeText(this, getString(R.string.msg_login_falha),
                                     Toast.LENGTH_SHORT).show()
-                            updateUI(null)
+                            finishLoading()
                         }
                     }
+        }
+        else {
+            btnEntrar.setProgress(false)
         }
     }
 

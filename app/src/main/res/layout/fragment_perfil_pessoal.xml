@@ -86,16 +86,17 @@
                 app:layout_constraintStart_toEndOf="@+id/estadoCivilTextView"
                 app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
 
-            <EditText
-                android:id="@+id/dataNascimentoButton"
-                android:layout_width="105dp"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:focusable="false"
-                android:hint="@string/hint_data"
-                android:textSize="@dimen/dimen_13sp"
-                app:layout_constraintStart_toEndOf="@+id/estadoCivilSpinner"
-                app:layout_constraintTop_toBottomOf="@+id/DataNascimentoTextView" />
+                <EditText
+                    android:id="@+id/dataNascimentoButton"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:focusable="false"
+                    android:hint="@string/hint_data"
+                    android:textSize="@dimen/dimen_13sp"
+                    app:layout_constraintStart_toStartOf="@+id/DataNascimentoTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/DataNascimentoTextView" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -274,6 +275,22 @@
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/cidadeEditText"
                 app:layout_constraintTop_toBottomOf="@+id/ufTextView" />
+
+                <Button
+                    android:id="@+id/btnOk"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="@dimen/dimen_50dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/ok"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/dimen_9sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cidadeEditText" />
 
             </android.support.constraint.ConstraintLayout>
 

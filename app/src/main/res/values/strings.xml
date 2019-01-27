@@ -29,6 +29,7 @@
     <string name="instituicao">Instituição</string>
     <string name="curso">Curso</string>
     <string name="buscar">Buscar</string>
+    <string name="ok">OK</string>
     <string name="novo_usuario">Novo Usuário?</string>
 
     <string name="hint_nome">Digite seu nome</string>
@@ -70,6 +71,7 @@
     <string name="msg_senha_branco">Favor preencher a senha.</string>
     <string name="msg_email_invalido">E-mail inválido.</string>
     <string name="msg_senha_invalido">Senha deve conter pelo menos 6 caracteres.</string>
+    <string name="msg_error_network">Erro ao logar. Verifique a sua conexão.</string>
 
     <string name="menu_perfil">Meus Dados</string>
     <string name="menu_agenda">Agenda</string>
