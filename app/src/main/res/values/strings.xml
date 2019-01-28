@@ -7,6 +7,7 @@
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
     <string name="criar">Criar</string>
+    <string name="enviar">Enviar</string>
     <string name="menu_header">Menu</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
@@ -31,6 +32,7 @@
     <string name="buscar">Buscar</string>
     <string name="ok">OK</string>
     <string name="novo_usuario">Novo Usuário?</string>
+    <string name="nova_senha">Esqueceu a Senha?</string>
 
     <string name="hint_nome">Digite seu nome</string>
     <string name="hint_email">Digite seu e-mail</string>
@@ -44,6 +46,7 @@
     <string name="hint_instituicao">Exemplo: UFABC</string>
     <string name="hint_curso">Exemplo: Administração</string>
     <string name="hint_senha">A senha deve conter no mínimo 6 caracteres</string>
+    <string name="hint_forgot_password">Digite o e-mail cadastrado para a redefinição de senha.</string>
 
     <string name="departamento_obreiros">Obreiros</string>
     <string name="departamento_louvor">Louvor</string>
@@ -72,6 +75,8 @@
     <string name="msg_email_invalido">E-mail inválido.</string>
     <string name="msg_senha_invalido">Senha deve conter pelo menos 6 caracteres.</string>
     <string name="msg_error_network">Erro ao logar. Verifique a sua conexão.</string>
+    <string name="msg_forgot_password">Um e-mail foi enviado para a definição de uma nova senha.</string>
+
 
     <string name="menu_perfil">Meus Dados</string>
     <string name="menu_agenda">Agenda</string>

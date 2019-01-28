@@ -94,15 +94,29 @@
         android:id="@+id/novoUsuarioTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_8dp"
+        android:layout_marginStart="@dimen/dimen_60dp"
         android:layout_marginTop="@dimen/dimen_15dp"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/novo_usuario"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:focusable="true"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+
+    <TextView
+        android:id="@+id/esqueceuSenhaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/nova_senha"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/novoUsuarioTextView"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
 
 </android.support.constraint.ConstraintLayout>

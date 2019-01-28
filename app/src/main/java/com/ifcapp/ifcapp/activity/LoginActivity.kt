@@ -20,15 +20,12 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import io.rmiri.buttonloading.ButtonLoading
 
-
-
-
-
 class LoginActivity : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
     private var user: FirebaseUser? = null
     private var novoUsuario = false
+    private var resetPassword = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +42,8 @@ class LoginActivity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
         if (novoUsuario) {
             startLoginActivity()
+            Toast.makeText(this, getString(R.string.msg_novo_usuario_sucesso),
+                    Toast.LENGTH_SHORT).show()
         }
         if (currentUser != null) {
             startMainActivity()
@@ -54,18 +53,56 @@ class LoginActivity : AppCompatActivity() {
     private fun startLoginActivity() {
         finish()
         val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent);
-        Toast.makeText(this, getString(R.string.msg_novo_usuario_sucesso),
-                Toast.LENGTH_SHORT).show()
+        startActivity(intent)
     }
 
     private fun initialize() {
         mAuth = FirebaseAuth.getInstance()
         setNotification()
         setNovoUsuario()
+        setForgotPassword()
         setButton()
         Util.openKeyboard(this, editTextSenha)
         editTextSenha.hint == ""
+    }
+
+    private fun setForgotPassword() {
+        esqueceuSenhaTextView.setOnClickListener {
+            onClickForgotPassword()
+        }
+    }
+
+    private fun onClickForgotPassword() {
+        textViewSenha.visibility = View.GONE
+        editTextSenha.visibility = View.GONE
+        novoUsuarioTextView.visibility = View.GONE
+        esqueceuSenhaTextView.visibility = View.GONE
+        emailEditText.hint = getString(R.string.hint_forgot_password)
+        btnEntrar.text = getString(R.string.enviar)
+        resetPassword = true
+    }
+
+    private fun sendEmail() {
+        if (isConnected()) {
+            if (!emailEditText.text.isEmpty() && validarFormatoEmail(emailEditText.text.toString())) {
+                FirebaseAuth.getInstance().sendPasswordResetEmail(emailEditText.text.toString())
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Log.d(TAG, getString(R.string.msg_forgot_password))
+                                Toast.makeText(this, getString(R.string.msg_forgot_password),
+                                        Toast.LENGTH_SHORT).show()
+                                startLoginActivity()
+                            }
+                        }
+            } else {
+                Toast.makeText(this, getString(R.string.msg_email_branco),
+                        Toast.LENGTH_SHORT).show()
+                finishLoading()
+            }
+        }
+        else {
+            erroConection()
+        }
     }
 
     private fun setButton() {
@@ -131,7 +168,11 @@ class LoginActivity : AppCompatActivity() {
             else {
                 finishLoading()
             }
-        } else {
+        } else if (resetPassword) {
+            sendEmail()
+        }
+
+        else {
             loginUser()
         }
     }
