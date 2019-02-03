@@ -46,16 +46,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nomeEditText" />
 
-            <com.ifcapp.ifcapp.componentes.CpfEditText
-                android:id="@+id/edtCpfCnpj"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_cpf"
-                android:inputType="number"
-                android:singleLine="true"
-                android:textSize="@dimen/dimen_13sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cpfTextView" />
+                <com.ifcapp.ifcapp.componentes.CpfEditText
+                    android:id="@+id/edtCpfCnpj"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_cpf"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textSize="@dimen/dimen_13sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cpfTextView" />
 
             <TextView
                 android:id="@+id/estadoCivilTextView"
@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dimen_200dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/estadoCivilSpinner"
                 android:textColor="@android:color/white"
@@ -76,21 +76,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/estadoCivilTextView" />
 
-            <TextView
-                android:id="@+id/DataNascimentoTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:text="@string/data_nascimento"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/estadoCivilTextView"
-                app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
+                <TextView
+                    android:id="@+id/DataNascimentoTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/data_nascimento"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/edtCpfCnpj" />
 
                 <EditText
                     android:id="@+id/dataNascimentoButton"
-                    android:layout_width="105dp"
+                    android:layout_width="@dimen/dimen_180dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:clickable="true"
                     android:focusable="false"
                     android:hint="@string/hint_data"
@@ -122,36 +120,36 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
                     android:text="@string/cep"
                     android:textStyle="bold"
-                    android:layout_marginTop="@dimen/dimen_10dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/FoneEditText" />
+                    app:layout_constraintStart_toStartOf="@+id/cepEditText"
+                    app:layout_constraintTop_toBottomOf="@+id/dataNascimentoButton" />
 
-            <EditText
-                android:id="@+id/cepEditText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_cep"
-                android:textSize="@dimen/dimen_13sp"
-                android:ems="8"
-                android:maxLength="8"
-                android:inputType="number"
-                android:autofillHints="@string/hint_cep"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <EditText
+                    android:id="@+id/cepEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/hint_cep"
+                    android:ems="8"
+                    android:hint="@string/hint_cep"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:textSize="@dimen/dimen_13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnCep"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-            <Button
-                android:id="@+id/btnCep"
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:text="@string/buscar"
-                android:textSize="@dimen/dimen_9sp"
-                android:textColor="@color/colorWhite"
-                android:background="@color/colorPrimary"
-                app:layout_constraintStart_toEndOf="@+id/cepEditText"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                <Button
+                    android:id="@+id/btnCep"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/buscar"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/dimen_9sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -229,8 +227,6 @@
                 android:id="@+id/bairroEditText"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:textSize="@dimen/dimen_13sp"
                 android:hint="@string/hint_bairro"
                 app:layout_constraintStart_toStartOf="parent"
@@ -249,8 +245,6 @@
                 android:id="@+id/cidadeEditText"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:textSize="@dimen/dimen_13sp"
                 android:hint="@string/hint_cidade"
                 app:layout_constraintStart_toStartOf="parent"
@@ -260,7 +254,7 @@
                 android:id="@+id/ufTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="@dimen/dimen_30dp"
                 android:text="@string/estado"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/cidadeEditText"
@@ -270,7 +264,7 @@
                 android:id="@+id/estadoSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="@dimen/dimen_30dp"
                 android:popupBackground="@color/colorPrimary"
                 android:textColor="@android:color/white"
                 app:layout_constraintStart_toEndOf="@+id/cidadeEditText"

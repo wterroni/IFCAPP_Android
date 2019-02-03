@@ -2,6 +2,7 @@ package com.ifcapp.ifcapp.fragment
 
 import android.app.Activity
 import android.app.DatePickerDialog
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.ifcapp.ifcapp.Util.Util
@@ -11,10 +12,13 @@ import com.ifcapp.ifcapp.models.Cep
 import java.util.*
 import android.view.*
 import android.widget.DatePicker
+import android.widget.EditText
 import android.widget.Toast
-import com.ifcapp.ifcapp.R
 import kotlinx.android.synthetic.main.fragment_perfil_pessoal.*
 import java.text.SimpleDateFormat
+import android.widget.TextView
+import android.widget.Spinner
+import com.ifcapp.ifcapp.R
 
 
 class PerfilPessoalFragment : BaseFragment(), CepListener {
@@ -22,6 +26,8 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
     private var mYear: Int = 0
     var mMonth: Int = 0
     var mDay: Int = 0
+    var validationListEditText: MutableList<EditText> = ArrayList()
+    var validationListSpinner: MutableList<Spinner> = ArrayList()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -39,6 +45,49 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
         setFoneTextChangedListener()
         setCepOnClick()
         setEstadoSpinner()
+        setBtnOk()
+        setListEditText()
+        setListSpinner()
+    }
+
+    fun setListEditText() {
+        validationListEditText.add(nomeEditText)
+        validationListEditText.add(edtCpfCnpj)
+        validationListEditText.add(dataNascimentoButton)
+        validationListEditText.add(FoneEditText)
+        validationListEditText.add(cepEditText)
+        validationListEditText.add(enderecoTextView)
+        validationListEditText.add(numeroEditText)
+        validationListEditText.add(complementoEditText)
+        validationListEditText.add(bairroEditText)
+        validationListEditText.add(cidadeEditText)
+
+        /*validationList.add(dataMembroButton)
+        validationList.add(instituicaoEditText)
+        validationList.add(cursoEditText)*/
+    }
+
+    fun setListSpinner() {
+        validationListSpinner.add(estadoCivilSpinner)
+        validationListSpinner.add(estadoSpinner)
+    }
+
+    fun setBtnOk() {
+        btnOk.setOnClickListener {
+            validSpinners()
+           /*if (validateEditTexts()) {
+
+           }*/
+        }
+    }
+
+    fun validSpinners(): Boolean {
+        return Util.validateSpinner(validationListSpinner, getString(R.string.msg_campo_obrigatorio))
+
+    }
+
+    fun validateEditTexts(): Boolean {
+        return Util.validateEditText(validationListEditText, getString(R.string.msg_campo_obrigatorio))
     }
 
     fun setCepOnClick() {
@@ -104,6 +153,7 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
                     val myFormat = "dd/MM/yyyy"
                     val sdf = SimpleDateFormat(myFormat, Locale.US)
                     dataNascimentoButton.setText(sdf.format(c.time))
+                    dataNascimentoButton.error = null
                 },
                 mYear, mMonth, mDay)
         datePickerDialog.show()

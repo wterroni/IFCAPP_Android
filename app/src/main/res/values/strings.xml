@@ -76,6 +76,7 @@
     <string name="msg_senha_invalido">Senha deve conter pelo menos 6 caracteres.</string>
     <string name="msg_error_network">Erro ao logar. Verifique a sua conexão.</string>
     <string name="msg_forgot_password">Um e-mail foi enviado para a definição de uma nova senha.</string>
+    <string name="msg_campo_obrigatorio">Campo obrigátorio.</string>
 
 
     <string name="menu_perfil">Meus Dados</string>

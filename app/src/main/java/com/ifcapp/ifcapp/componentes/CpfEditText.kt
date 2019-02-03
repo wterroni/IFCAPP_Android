@@ -43,8 +43,8 @@ class CpfEditText : EditText {
         val maxNumberLength = 11
         this.keyListener = keylistenerNumber
 
-        this.setText(" - ")
-        this.setSelection(1)
+        //this.setText(" - ")
+        //this.setSelection(1)
 
         this.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {

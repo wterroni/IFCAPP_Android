@@ -2,13 +2,58 @@ package com.ifcapp.ifcapp.Util
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.Spinner
+import android.widget.TextView
 
 
 class Util {
 
     companion object {
+
+        fun validateEditText(validationList: List<EditText>, msgError: String): Boolean {
+            for (et in validationList) {
+                if (isInvalidEditText(et)) {
+                    et.error = msgError
+                    et.requestFocus()
+                    return false
+                }
+            }
+            return true
+        }
+
+        private fun isInvalidEditText(et: EditText) : Boolean {
+            return et.text.isEmpty() || et.length() == 0 || et.equals("");
+        }
+
+        fun validateSpinner(validationList: List<Spinner>, msgError: String): Boolean {
+            for (et in validationList) {
+                if (isInvalidSpinner(et, msgError)) {
+                    return false
+                }
+            }
+            return true
+        }
+
+        private fun isInvalidSpinner(spinner: Spinner, error: String): Boolean {
+            if (spinner.selectedItemPosition == 0) {
+                setSpinnerError(spinner, error)
+                return false
+            }
+            return true
+        }
+
+        private fun setSpinnerError(spinner: Spinner, error: String) {
+            val selectedView = spinner.selectedView
+            if (selectedView != null && selectedView is TextView) {
+                selectedView.error = "error"
+                selectedView.setTextColor(Color.RED)
+                selectedView.text = error
+                //spinner.performClick()
+            }
+        }
 
         fun closeKeyboard(activity: Activity, editText: EditText) {
             val view = activity.currentFocus
@@ -57,4 +102,6 @@ class Util {
             return posicaoEstado
         }
     }
+
+
 }
