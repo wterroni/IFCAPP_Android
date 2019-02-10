@@ -39,7 +39,7 @@ class Util {
 
         private fun isInvalidSpinner(spinner: Spinner, error: String): Boolean {
             if (spinner.selectedItemPosition == 0) {
-                setSpinnerError(spinner, error)
+                setSpinnerError(spinner, "")
                 return false
             }
             return true

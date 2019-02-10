@@ -75,9 +75,7 @@ class PerfilPessoalFragment : BaseFragment(), CepListener {
     fun setBtnOk() {
         btnOk.setOnClickListener {
             validSpinners()
-           /*if (validateEditTexts()) {
-
-           }*/
+            validateEditTexts()
         }
     }
 
