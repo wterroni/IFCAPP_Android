@@ -19,6 +19,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import io.rmiri.buttonloading.ButtonLoading
+import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat
+import android.support.v4.view.AccessibilityDelegateCompat
+import android.support.v4.view.ViewCompat
+import android.widget.Button
+import android.widget.TextView
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,6 +32,8 @@ class LoginActivity : AppCompatActivity() {
     private var user: FirebaseUser? = null
     private var novoUsuario = false
     private var resetPassword = false
+    var listTextView: MutableList<TextView> = ArrayList()
+    var listTextViewButton: MutableList<TextView> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,6 +72,40 @@ class LoginActivity : AppCompatActivity() {
         setButton()
         Util.openKeyboard(this, editTextSenha)
         editTextSenha.hint == ""
+        setAccessibility()
+    }
+
+    private fun setAccessibility() {
+        listTextView.add(emailTextView)
+        listTextView.add(textViewSenha)
+        listTextViewButton.add(novoUsuarioTextView)
+        listTextViewButton.add(esqueceuSenhaTextView)
+
+        for (item in listTextView) {
+            ViewCompat.setAccessibilityDelegate(item, object : AccessibilityDelegateCompat() {
+                override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfoCompat) {
+                    super.onInitializeAccessibilityNodeInfo(host, info)
+                    info.isHeading = true
+                }
+            })
+        }
+
+        for (item in listTextViewButton) {
+            ViewCompat.setAccessibilityDelegate(item, object : AccessibilityDelegateCompat() {
+                override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfoCompat) {
+                    super.onInitializeAccessibilityNodeInfo(host, info)
+                    info.className = Button::class!!.java.name
+                }
+            })
+        }
+
+        ViewCompat.setAccessibilityDelegate(btnEntrar, object : AccessibilityDelegateCompat() {
+            override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfoCompat) {
+                super.onInitializeAccessibilityNodeInfo(host, info)
+                info.contentDescription = "login"
+                info.className = Button::class!!.java.name
+            }
+        })
     }
 
     private fun setForgotPassword() {
