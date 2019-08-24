@@ -2,17 +2,17 @@ package com.ifcapp.ifcapp.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.widget.DrawerLayout
-import android.support.v7.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import com.ifcapp.ifcapp.R
 import kotlinx.android.synthetic.main.activity_main.*
-import android.support.design.widget.NavigationView
+import com.google.android.material.navigation.NavigationView
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.ifcapp.ifcapp.Util.MenuConstantes
 import android.content.DialogInterface
-import android.support.v7.app.AlertDialog
+import androidx.appcompat.app.AlertDialog
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {

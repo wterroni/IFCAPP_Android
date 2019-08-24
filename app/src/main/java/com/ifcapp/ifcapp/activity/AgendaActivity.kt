@@ -2,7 +2,7 @@ package com.ifcapp.ifcapp.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.ifcapp.ifcapp.R
 import com.ifcapp.ifcapp.adapter.AgendaListAdapter
 import com.ifcapp.ifcapp.models.Agenda
@@ -17,7 +17,7 @@ class AgendaActivity : BaseActivity(), AgendaListAdapter.OnAgendaClick {
         val recyclerView = recyclerViewAgenda
         recyclerView.adapter = AgendaListAdapter(this, agenda(), this)
 
-        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val layoutManager = androidx.recyclerview.widget.StaggeredGridLayoutManager(2, androidx.recyclerview.widget.StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
     }
 

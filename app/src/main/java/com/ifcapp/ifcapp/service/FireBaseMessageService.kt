@@ -8,8 +8,8 @@ import android.content.Context
 import android.content.Intent
 import android.media.RingtoneManager
 import android.os.Build
-import android.support.v4.app.NotificationCompat
-import android.support.v4.content.ContextCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import android.util.Log
 import com.firebase.jobdispatcher.FirebaseJobDispatcher
 import com.firebase.jobdispatcher.GooglePlayDriver
@@ -20,7 +20,7 @@ import com.ifcapp.ifcapp.activity.LoginActivity
 
 class FireBaseMessageService : FirebaseMessagingService(){
 
-    override fun onMessageReceived(remoteMessage: RemoteMessage?) {
+    override fun onMessageReceived(p0: RemoteMessage) {
         Log.d(TAG, "onMessageReceived")
         // [START_EXCLUDE]
         // There are two types of messages data messages and notification messages. Data messages are handled
@@ -34,11 +34,11 @@ class FireBaseMessageService : FirebaseMessagingService(){
 
         // TODO(developer): Handle FCM messages here.
         // Not getting messages here? See why this may be: https://goo.gl/39bRNJ
-        Log.d(TAG, "Mensagem Recebida: ${remoteMessage?.from}")
+        Log.d(TAG, "Mensagem Recebida: ${p0.from}")
 
         // Check if message contains a data payload.
-        remoteMessage?.data?.isNotEmpty()?.let {
-            Log.d(TAG, "Message data payload: " + remoteMessage.data)
+        p0.data?.isNotEmpty()?.let {
+            Log.d(TAG, "Message data payload: " + p0.data)
 
             if (/* Check if data needs to be processed by long running job */ true) {
                 // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
@@ -50,7 +50,7 @@ class FireBaseMessageService : FirebaseMessagingService(){
         }
 
         // Check if message contains a notification payload.
-        remoteMessage?.notification?.let {
+        p0.notification?.let {
             Log.d(TAG, "Message Notification Body: ${it.body}")
         }
 
@@ -65,9 +65,9 @@ class FireBaseMessageService : FirebaseMessagingService(){
      * the previous token had been compromised. Note that this is called when the InstanceID token
      * is initially generated so this is where you would retrieve the token.
      */
-    override fun onNewToken(token: String?) {
+    override fun onNewToken(p0: String) {
         Log.d(TAG, "onNewToken")
-        Log.d(TAG, "Refreshed token: $token")
+        Log.d(TAG, "Refreshed token: $p0")
 
         // If you want to send messages to this application instance or
         // manage this apps subscriptions on the server side, send the

@@ -7,7 +7,7 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -19,9 +19,9 @@ import kotlinx.android.synthetic.main.activity_login.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import io.rmiri.buttonloading.ButtonLoading
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat
-import android.support.v4.view.AccessibilityDelegateCompat
-import android.support.v4.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import androidx.core.view.AccessibilityDelegateCompat
+import androidx.core.view.ViewCompat
 import android.widget.Button
 import android.widget.TextView
 
@@ -148,10 +148,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setButton() {
-        btnEntrar.setOnButtonLoadingListener(object : ButtonLoading.OnButtonLoadingListener {
-            override fun onClick() {
+        btnEntrar.setOnClickListener {
+            loginAction()
+            /*override fun onClick() {
                 if (isConnected()) {
-                    loginAction()
+
                 }
                 else {
                     erroConection()
@@ -164,7 +165,8 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onFinish() {
             }
-        })
+        })*/
+        }
 
     }
 
@@ -180,11 +182,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     internal fun finishLoading() {
-        btnEntrar.setProgress(false)
+        //btnEntrar.setProgress(false)
     }
 
     internal fun finishLoadingWithDelay() {
-        Handler().postDelayed({ btnEntrar.setProgress(false); updateUI(user) }, 1000)
+        Handler().postDelayed({ updateUI(user) }, 1000)
     }
 
     private fun setNovoUsuario() {
@@ -247,7 +249,7 @@ class LoginActivity : AppCompatActivity() {
                     }
         }
         else {
-            btnEntrar.setProgress(false)
+            //btnEntrar.setProgress(false)
         }
     }
 

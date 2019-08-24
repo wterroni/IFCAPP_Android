@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -73,20 +73,15 @@
         app:layout_constraintStart_toStartOf="parent"
         android:inputType="textPassword" />
 
-    <io.rmiri.buttonloading.ButtonLoading
+    <Button
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_40dp"
         android:id="@+id/btnEntrar"
         android:focusable="true"
-        android:contentDescription="Login"
-        app:BL_backgroundColor="#80ffffff"
-        app:BL_circleColor="@color/colorPrimary"
-        app:BL_circleColorSecond="@color/colorWhiteTransparent"
-        app:BL_enable="true"
-        app:BL_stateShow="normal"
-        app:BL_text="Login"
-        app:BL_textColor="#FFFFFF"
-        app:BL_textSize="@dimen/dimen_13sp"
+        android:contentDescription="@string/login"
+        android:text="@string/login"
+        android:textColor="@color/colorSecundary"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,4 +116,4 @@
         app:layout_constraintStart_toEndOf="@+id/novoUsuarioTextView"
         app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

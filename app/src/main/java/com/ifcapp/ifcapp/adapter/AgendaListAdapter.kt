@@ -1,12 +1,12 @@
 package com.ifcapp.ifcapp.adapter
 
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.Adapter
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
 import android.view.View
 import android.view.ViewGroup
 import com.ifcapp.ifcapp.models.Agenda
 import android.content.Context
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
 import android.widget.TextView
 import com.ifcapp.ifcapp.R
@@ -30,7 +30,7 @@ class AgendaListAdapter(private val listener: OnAgendaClick,
         return ViewHolder(view, listener)
     }
 
-    inner class ViewHolder(itemView: View, listener: OnAgendaClick) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View, listener: OnAgendaClick) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         val dataCulto: TextView
         val nomeCulto: TextView
